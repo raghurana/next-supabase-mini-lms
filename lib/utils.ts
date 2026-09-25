@@ -5,6 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null;
+
 // This check can be removed, it is just for tutorial purposes
 export const hasEnvVars =
   process.env.NEXT_PUBLIC_SUPABASE_URL &&
